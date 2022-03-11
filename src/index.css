@@ -1,13 +1,80 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(27, 23, 23);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+main {
+  height: 500px;
+  max-width: 500px;
+  background-color: whitesmoke;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.start-container {
+  width: 250px;
+  font-family: "Nunito", sans-serif;
+}
+
+.start-container h1 {
+  font-size: 40px;
+}
+
+.start-container p {
+  margin: 5px 0 20px 0;
+}
+
+.start-container button {
+  font-family: "Nunito", sans-serif;
+  background-color: rgb(53, 0, 139);
+  color: whitesmoke;
+  height: 40px;
+  width: 150px;
+  border-radius: 9px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.start-container button:hover {
+  background-color: rgb(85, 13, 179);
+}
+
+button:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.blue {
+  background-color: rgb(184, 227, 241);
+  width: 200px;
+  height: 500px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 50px 0px -150px -500px;
+}
+
+.yellow {
+  background-color: lightyellow;
+  width: 200px;
+  height: 500px;
+  border-radius: 30%;
+  overflow: hidden;
+  margin: -150px -550px 50px 0;
+  transform: rotate(45deg);
 }
