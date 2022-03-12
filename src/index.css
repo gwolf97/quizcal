@@ -19,7 +19,7 @@ main {
   height: 500px;
   max-width: 500px;
   background-color: whitesmoke;
-  margin: 10px auto;
+  margin: 75px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
