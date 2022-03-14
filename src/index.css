@@ -26,6 +26,7 @@ main {
   align-items: center;
   text-align: center;
   overflow: hidden;
+  position: relative;
 }
 
 .start-container {
@@ -79,4 +80,89 @@ button:active {
   overflow: hidden;
   margin: -150px -550px 50px 0;
   transform: rotate(45deg);
+}
+
+.small-blue {
+  background-color: rgb(184, 227, 241);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  bottom: -90px;
+  left: -90px;
+}
+
+.small-yellow {
+  background-color: lightyellow;
+  width: 180px;
+  height: 180px;
+  border-radius: 30%;
+  overflow: hidden;
+  transform: rotate(45deg);
+  position: absolute;
+  right: -100px;
+  top: -100px;
+}
+
+li {
+  list-style: none;
+}
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 75%;
+  font-family: "Nunito", sans-serif;
+  overflow: scroll;
+  max-height: 400px;
+}
+
+.quiz-container::-webkit-scrollbar {
+  display: none;
+}
+
+.answer-buttons button {
+  font-family: "Nunito", sans-serif;
+  background-color: whitesmoke;
+  border-color: rgb(85, 13, 179, 0.5);
+  color: rgb(85, 13, 179);
+  padding: 3px 10px;
+  font-size: 12px;
+  border-radius: 9px;
+  cursor: pointer;
+  margin: 2px 2px;
+}
+
+.answer-buttons button:hover {
+  background-color: rgba(209, 201, 209, 0.61);
+}
+
+.question {
+  color: rgb(51, 22, 88);
+  margin-bottom: 10px;
+}
+
+.question-container {
+  border-bottom: 1px solid rgba(82, 77, 77, 0.2);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+.check-answers {
+  font-family: "Nunito", sans-serif;
+  background-color: rgb(53, 0, 139);
+  color: whitesmoke;
+  height: 40px;
+  width: 150px;
+  border-radius: 9px;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 10px auto 0 auto;
+}
+
+.check-answers:hover {
+  background-color: rgb(85, 13, 179);
 }

@@ -18,16 +18,25 @@ const Quiz = (props) => {
             }))
     }, [props.start])
 
+    console.log(questionData.questions)
+
     function renderQuestions(){
     
     }
 
+    //<li>{decode(object.question)}</li>
+
     return ( 
-        <div className="quiz-container">
-            <ul>
-                {questionData.dataLoaded && questionData.questions.map(object => (<li>{decode(object.question)}</li>))}
-            </ul>
-        </div>
+        <>
+        <div className="small-yellow"></div>
+            <div className="quiz-container">
+                <ul>
+                    {questionData.dataLoaded && questionData.questions.map(object => (<Question question={object.question} incorrect={object.incorrect_answers} correct={object.correct_answer}/>))}
+                </ul>
+                {questionData.dataLoaded && <button className="check-answers">Check answers</button>}
+            </div>
+        <div className="small-blue"></div>
+        </>
      );
 }
  
