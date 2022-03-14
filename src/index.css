@@ -35,10 +35,12 @@ main {
 
 .start-container h1 {
   font-size: 40px;
+  color: rgb(53, 0, 139);
 }
 
 .start-container p {
   margin: 5px 0 20px 0;
+  font-weight: 400;
 }
 
 .start-container button {
