@@ -30,7 +30,9 @@ const Quiz = (props) => {
             if (prev[i].question === name){
                 prev.splice(i,1)
             }
-        } return[...prev, {question:name,answer:id}]})}
+        } return[...prev, {question:name,answer:id}]})
+        
+    }
 
     function handleClick(){
         questionData.questions.map(obj => setCorrectAnswers(prev => [...prev,obj.correct_answer]))
@@ -40,7 +42,7 @@ const Quiz = (props) => {
             correctAnswers.includes(answer) && setAmountCorrect(prevAmount => prevAmount + 1)
         } )
     }
-    console.log(questionData.questions)
+    console.log(selectedAnswers)
 
 console.log()
     return ( 

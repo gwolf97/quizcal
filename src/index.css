@@ -139,6 +139,10 @@ li {
   background-color: rgba(209, 201, 209, 0.61);
 }
 
+.selected {
+  background-color: darkslateblue;
+}
+
 .question {
   color: rgb(51, 22, 88);
   margin-bottom: 10px;
