@@ -1,25 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { decode } from "html-entities";
 
 const Question = (props) => {
 
-const incorrect =props.incorrect
-const correct =props.correct
+const incorrect = props.incorrect
+const correct = props.correct
 const allAnswers = [...incorrect, correct]
 const newAnswers = allAnswers.sort((a,b) => 0.5 - Math.random());
 
 
-console.log(correct)
+//<button onClick={props.answerChosen} value={newAnswers[0]}>{decode(newAnswers[0])}</button>
+//<button onClick={props.answerChosen} value={newAnswers[1]}>{decode(newAnswers[1])}</button>
+//<button onClick={props.answerChosen} value={newAnswers[2]}>{decode(newAnswers[2])}</button>
+//<button onClick={props.answerChosen} value={newAnswers[3]}>{decode(newAnswers[3])}</button>
 
     return ( 
         <div className="question-container">
             <li className="question">{decode(props.question)}</li>
-            <div className="answer-buttons">
-                <button value={newAnswers[0]}>{decode(newAnswers[0])}</button>
-                <button value={newAnswers[1]}>{decode(newAnswers[1])}</button>
-                <button value={newAnswers[2]}>{decode(newAnswers[2])}</button>
-                <button value={newAnswers[3]}>{decode(newAnswers[3])}</button>
-            </div>
+            <ul className="answer-buttons">
+            <li>
+    <input type="radio" id={newAnswers[0]} name={props.question} />
+    <label htmlFor={newAnswers[0]}>{newAnswers[0]}</label>
+  </li>
+  <li>
+    <input type="radio" id={newAnswers[1]} name={props.question} />
+    <label htmlFor={newAnswers[1]}>{newAnswers[1]}</label>
+  </li>
+  <li>
+    <input type="radio" id={newAnswers[2]} name={props.question} />
+    <label htmlFor={newAnswers[2]}>{newAnswers[2]}</label>
+  </li>
+  <li>
+    <input type="radio" id={newAnswers[3]} name={props.question} />
+    <label htmlFor={newAnswers[3]}>{newAnswers[3]}</label>
+  </li>
+            </ul>
         </div>
      );
 }

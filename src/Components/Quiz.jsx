@@ -8,6 +8,12 @@ const Quiz = (props) => {
         dataLoaded: false
     })
 
+    const [selectedAnswers, setSelectedAnswers] = React.useState({
+        
+    })
+
+
+
     React.useEffect(() => {
         fetch(`https://opentdb.com/api.php?amount=5&type=multiple`)
             .then(res => res.json())
@@ -19,12 +25,6 @@ const Quiz = (props) => {
     }, [props.start])
 
     console.log(questionData.questions)
-
-    function renderQuestions(){
-    
-    }
-
-    //<li>{decode(object.question)}</li>
 
     return ( 
         <>
