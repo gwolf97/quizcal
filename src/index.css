@@ -170,3 +170,9 @@ li {
 .check-answers:hover {
   background-color: rgb(85, 13, 179);
 }
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
