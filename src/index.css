@@ -176,3 +176,11 @@ li {
   justify-content: center;
   align-items: center;
 }
+
+.correct {
+  background-color: green !important;
+}
+
+.incorrect {
+  background-color: red !important;
+}

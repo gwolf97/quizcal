@@ -53,7 +53,7 @@ console.log()
         <div className="small-yellow"></div>
             <div className="quiz-container">
                 <ul>
-                    {questionData.dataLoaded && questionData.questions.map(object => (<Question key={object.question} question={object.question} incorrect={object.incorrect_answers} correct={object.correct_answer} handleChange={handleChange} selected={selectedAnswers}/>))}
+                    {questionData.dataLoaded && questionData.questions.map(object => (<Question key={object.question} question={object.question} incorrect={object.incorrect_answers} correct={object.correct_answer} handleChange={handleChange} selected={selectedAnswers} allCorrect={correctAnswers} check={check}/>))}
                 </ul>
                     <div className="controls">
                     {questionData.dataLoaded && !check && <button className="check-answers" onClick={handleClick}>Check answers</button>}

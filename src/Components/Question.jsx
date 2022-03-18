@@ -3,6 +3,7 @@ import { decode } from "html-entities";
 
 const Question = (props) => {
 
+const allCorrect = props.allCorrect
 const selected = props.selected.map(obj => obj.answer)
 const incorrect = props.incorrect
 const correct = props.correct
@@ -26,10 +27,10 @@ const styles = {
         <div className="question-container">
             <li className="question">{decode(props.question)}</li>
             <ul className="answer-buttons">
-            <button style={selected.includes(newAnswers[0]) ? styles : {}} onClick={props.handleChange} name={props.question} id={newAnswers[0]}>{decode(newAnswers[0])}</button>
-            <button style={selected.includes(newAnswers[1]) ? styles : {}} onClick={props.handleChange} name={props.question} id={newAnswers[1]}>{decode(newAnswers[1])}</button>
-            <button style={selected.includes(newAnswers[2]) ? styles : {}} onClick={props.handleChange} name={props.question} id={newAnswers[2]}>{decode(newAnswers[2])}</button>
-            <button style={selected.includes(newAnswers[3]) ? styles : {}} onClick={props.handleChange} name={props.question} id={newAnswers[3]}>{decode(newAnswers[3])}</button>
+            <button className={` correct ${props.check && selected.includes(newAnswers[0]) && allCorrect.includes(newAnswers[0] ? "correct" : "incorrect")}`} style={selected.includes(newAnswers[0]) ? styles : {}}  onClick={props.handleChange} name={props.question} id={newAnswers[0]}>{decode(newAnswers[0])}</button>
+            <button className={`"correct" ${props.check && selected.includes(newAnswers[1]) && allCorrect.includes(newAnswers[1] ? "correct" : "incorrect")}`} style={selected.includes(newAnswers[1]) ? styles : {}}  onClick={props.handleChange} name={props.question} id={newAnswers[1]}>{decode(newAnswers[1])}</button>
+            <button className={`"correct" ${props.check && selected.includes(newAnswers[2]) && allCorrect.includes(newAnswers[2] ? "correct" : "incorrect")}`} style={selected.includes(newAnswers[2]) ? styles : {}}  onClick={props.handleChange} name={props.question} id={newAnswers[2]}>{decode(newAnswers[2])}</button>
+            <button className={`"correct" ${props.check && selected.includes(newAnswers[3]) && allCorrect.includes(newAnswers[3] ? "correct" : "incorrect")}`} style={selected.includes(newAnswers[3]) ? styles : {}}  onClick={props.handleChange} name={props.question} id={newAnswers[3]}>{decode(newAnswers[3])}</button>
             </ul>
         </div>
      );
