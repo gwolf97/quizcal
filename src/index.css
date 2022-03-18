@@ -177,10 +177,10 @@ li {
   align-items: center;
 }
 
-.correct {
-  background-color: green !important;
+.incorrect {
+  background-color: rgba(255, 6, 6, 0.575) !important;
 }
 
-.incorrect {
-  background-color: red !important;
+.corrected {
+  background-color: rgba(100, 218, 139, 0.493) !important;
 }

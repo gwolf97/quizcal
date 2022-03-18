@@ -14,14 +14,17 @@ const Quiz = (props) => {
     const [correctAnswers, setCorrectAnswers] = React.useState([])
     const [check, setCheck] = React.useState(false)
 
+
+    function getQuestions(){    fetch(`https://opentdb.com/api.php?amount=5&type=multiple`)
+    .then(res => res.json())
+    .then(data =>
+        setQuestionData({
+        questions: data.results,
+        dataLoaded: true
+    }))}
+
     React.useEffect(() => {
-        fetch(`https://opentdb.com/api.php?amount=5&type=multiple`)
-            .then(res => res.json())
-            .then(data =>
-                setQuestionData({
-                questions: data.results,
-                dataLoaded: true
-            }))
+            getQuestions()
     }, [props.start])
 
     React.useEffect(()=>{
@@ -41,11 +44,27 @@ const Quiz = (props) => {
     }
 
     function handleClick(){
+
+    if( selectedAnswers.length < 5){
+        return alert("Complete the quiz before checking.")
+    }else{
         setCheck(true)
         questionData.questions.map(obj => setCorrectAnswers(prev => [...prev,obj.correct_answer]))
         selectedAnswers.map(obj => setFinalAnswers(prev => [...prev, obj.answer]))
     }
-    console.log(questionData)
+    }
+
+    function newQuiz(){
+        getQuestions()
+        setTimeout(setCheck(false), 4000)
+        setSelectedAnswers([])
+        setFinalAnswers([])
+        setAmountCorrect(0)
+        setCorrectAnswers([])
+
+    }
+
+
 
 console.log()
     return ( 
@@ -58,7 +77,7 @@ console.log()
                     <div className="controls">
                     {questionData.dataLoaded && !check && <button className="check-answers" onClick={handleClick}>Check answers</button>}
                     {check && <div>You got {amountCorrect}/5 answers correct</div>}
-                    {check && <button className="check-answers">New quiz</button>}
+                    {check && <button onClick={newQuiz} className="check-answers">New quiz</button>}
                     </div>
             </div>
         <div className="small-blue"></div>
